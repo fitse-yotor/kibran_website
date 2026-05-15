@@ -1670,6 +1670,7 @@ body.cursor-hover .cursor-ring {
   }
 
   .section-header { margin-bottom: 40px; }
+  .testimonials-track-wrap { width: 100%; }
   .testimonial-card { padding: 28px 24px; }
   .tcard-quote { font-size: 52px; }
 

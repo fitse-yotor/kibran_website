@@ -272,34 +272,58 @@ function initParticles() {
 
   const cards = track.querySelectorAll('.testimonial-card');
   const total = cards.length;
-  const perView = window.innerWidth < 768 ? 1 : 2;
+  let perView = window.innerWidth < 768 ? 1 : 2;
   let current = 0;
   let autoplay;
 
-  // Build dots
-  const dots = [];
-  const maxDot = Math.ceil(total / perView);
-  for (let i = 0; i < maxDot; i++) {
-    const d = document.createElement('div');
-    d.className = 'tnav-dot' + (i === 0 ? ' active' : '');
-    d.addEventListener('click', () => goTo(i));
-    dotsEl && dotsEl.appendChild(d);
-    dots.push(d);
+  let dots = [];
+  let maxDot = Math.ceil(total / perView);
+
+  function buildDots() {
+    if (!dotsEl) return;
+    dotsEl.innerHTML = '';
+    dots = [];
+    maxDot = Math.ceil(total / perView);
+    for (let i = 0; i < maxDot; i++) {
+      const d = document.createElement('div');
+      d.className = 'tnav-dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(d);
+      dots.push(d);
+    }
   }
 
   function goTo(idx) {
     current = ((idx % maxDot) + maxDot) % maxDot;
-    const cardWidth = cards[0].getBoundingClientRect().width + 28;
+    const gap = parseFloat(getComputedStyle(track).gap) || 28;
+    const cardWidth = cards[0].getBoundingClientRect().width + gap;
     track.style.transform = `translateX(-${current * perView * cardWidth}px)`;
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
   }
+
+  function onResize() {
+    const nextPerView = window.innerWidth < 768 ? 1 : 2;
+    if (nextPerView === perView) {
+      goTo(current);
+      return;
+    }
+    perView = nextPerView;
+    current = 0;
+    buildDots();
+    goTo(0);
+  }
+
+  buildDots();
 
   prev && prev.addEventListener('click', () => { clearInterval(autoplay); goTo(current - 1); startAuto(); });
   next && next.addEventListener('click', () => { clearInterval(autoplay); goTo(current + 1); startAuto(); });
 
   function startAuto() {
+    clearInterval(autoplay);
     autoplay = setInterval(() => goTo(current + 1), 5000);
   }
+
+  window.addEventListener('resize', onResize);
   startAuto();
 })();
 
