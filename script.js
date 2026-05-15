@@ -144,16 +144,23 @@ function initParticles() {
 
   // Mobile toggle
   if (toggle && links) {
+    const closeMenu = () => {
+      toggle.classList.remove('active');
+      links.classList.remove('mobile-open');
+      document.body.classList.remove('menu-open');
+    };
+
     toggle.addEventListener('click', () => {
-      toggle.classList.toggle('active');
-      links.classList.toggle('mobile-open');
+      const open = !links.classList.contains('mobile-open');
+      toggle.classList.toggle('active', open);
+      links.classList.toggle('mobile-open', open);
+      document.body.classList.toggle('menu-open', open);
     });
-    // Close on link click
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        toggle.classList.remove('active');
-        links.classList.remove('mobile-open');
-      });
+
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    document.querySelector('.nav-cta')?.addEventListener('click', closeMenu);
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeMenu();
     });
   }
 })();
@@ -238,7 +245,7 @@ function initParticles() {
 /* ─── HERO CARD 3D PARALLAX ─── */
 (function initHeroParallax() {
   const card = document.getElementById('heroCard');
-  if (!card) return;
+  if (!card || window.matchMedia('(pointer: coarse)').matches) return;
 
   document.addEventListener('mousemove', e => {
     const cx = window.innerWidth  / 2;
