@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KIBRAN — Ethiopian Handcrafted Furniture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     LOADING SCREEN
+═══════════════════════════════════════════════ -->
+<div id="loader">
+  <div class="loader-inner">
+    <svg class="loader-mandala" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+      <circle class="l-ring l-r1" cx="150" cy="150" r="130" fill="none" stroke="#C9A84C" stroke-width="1" stroke-dasharray="816" stroke-dashoffset="816"/>
+      <circle class="l-ring l-r2" cx="150" cy="150" r="110" fill="none" stroke="#C9A84C" stroke-width="2" stroke-dasharray="691" stroke-dashoffset="691"/>
+      <circle class="l-ring l-r3" cx="150" cy="150" r="88"  fill="none" stroke="#8B5E1A" stroke-width="1.5" stroke-dasharray="553" stroke-dashoffset="553"/>
+      <circle class="l-ring l-r4" cx="150" cy="150" r="64"  fill="none" stroke="#C9A84C" stroke-width="1" stroke-dasharray="402" stroke-dashoffset="402"/>
+      <circle class="l-ring l-r5" cx="150" cy="150" r="40"  fill="none" stroke="#C9A84C" stroke-width="3" stroke-dasharray="251" stroke-dashoffset="251"/>
+      <g class="l-spokes" opacity="0" stroke="#C9A84C" stroke-width="1.2" fill="none">
+        <path d="M150 20 Q168 60 150 100 Q132 60 150 20"/>
+        <path d="M150 280 Q168 240 150 200 Q132 240 150 280"/>
+        <path d="M20 150 Q60 168 100 150 Q60 132 20 150"/>
+        <path d="M280 150 Q240 168 200 150 Q240 132 280 150"/>
+        <path d="M61 61 Q90 100 110 130 Q80 105 61 61"/>
+        <path d="M239 61 Q210 100 190 130 Q220 105 239 61"/>
+        <path d="M61 239 Q90 200 110 170 Q80 195 61 239"/>
+        <path d="M239 239 Q210 200 190 170 Q220 195 239 239"/>
+      </g>
+      <rect class="l-center" x="130" y="130" width="40" height="40" fill="#2C1400" stroke="#C9A84C" stroke-width="1.5" opacity="0"/>
+    </svg>
+    <div class="loader-text">
+      <span class="loader-brand">KIBRAN</span>
+      <span class="loader-sub">Ethiopian Handcrafted Furniture</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     CANVAS PARTICLE BACKGROUND
+═══════════════════════════════════════════════ -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ═══════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════ -->
+<nav id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="nav-logo">
+      <svg class="nav-logo-icon" viewBox="0 0 40 40" width="32" height="32">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="6 3"/>
+        <rect x="12" y="12" width="16" height="16" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+        <rect x="15" y="15" width="10" height="10" fill="#C9A84C" opacity="0.7"/>
+        <line x1="12" y1="20" x2="28" y2="20" stroke="#1A0C02" stroke-width="1"/>
+        <line x1="20" y1="12" x2="20" y2="28" stroke="#1A0C02" stroke-width="1"/>
+      </svg>
+      <span>KIBRAN</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#collections" class="nav-link">Collections</a></li>
+      <li><a href="#craft" class="nav-link">Our Craft</a></li>
+      <li><a href="#about" class="nav-link">Heritage</a></li>
+      <li><a href="#branches" class="nav-link">Branches</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Contact Us</a>
+  </div>
+  <!-- Gold progress bar -->
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════════ -->
+<section id="home" class="hero">
+  <!-- Animated SVG video-like background -->
+  <div class="hero-video-bg">
+    <svg class="hero-bg-svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="hg1" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="#3D1A00"/>
+          <stop offset="100%" stop-color="#0A0401"/>
+        </radialGradient>
+        <pattern id="hero-lattice" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+          <rect width="60" height="60" fill="none"/>
+          <rect x="4" y="4" width="52" height="52" fill="none" stroke="#C9A84C" stroke-width="0.4" opacity="0.25"/>
+          <rect x="16" y="16" width="28" height="28" fill="#C9A84C" opacity="0.04"/>
+          <line x1="4" y1="30" x2="56" y2="30" stroke="#C9A84C" stroke-width="0.3" opacity="0.2"/>
+          <line x1="30" y1="4" x2="30" y2="56" stroke="#C9A84C" stroke-width="0.3" opacity="0.2"/>
+        </pattern>
+        <pattern id="hero-rope" x="0" y="0" width="32" height="20" patternUnits="userSpaceOnUse">
+          <path d="M0 5 Q8 0 16 5 Q24 10 32 5" fill="none" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
+          <path d="M0 15 Q8 10 16 15 Q24 20 32 15" fill="none" stroke="#C9A84C" stroke-width="1.2" stroke-linecap="round" opacity="0.3"/>
+          <path d="M0 10 Q8 15 16 10 Q24 5 32 10" fill="none" stroke="#8B5E1A" stroke-width="0.7" stroke-linecap="round" opacity="0.2"/>
+        </pattern>
+      </defs>
+      <rect width="1400" height="900" fill="url(#hg1)"/>
+      <rect width="1400" height="900" fill="url(#hero-lattice)"/>
+      <!-- Rotating mandala rings -->
+      <g class="hero-mandala-bg" transform="translate(1050,450)">
+        <circle r="350" fill="none" stroke="#C9A84C" stroke-width="0.5" stroke-dasharray="20 10" opacity="0.15" class="rot-slow"/>
+        <circle r="280" fill="none" stroke="#C9A84C" stroke-width="0.8" stroke-dasharray="15 8" opacity="0.2" class="rot-slow-r"/>
+        <circle r="210" fill="none" stroke="#8B5E1A" stroke-width="0.5" stroke-dasharray="10 6" opacity="0.2" class="rot-slow"/>
+        <circle r="140" fill="none" stroke="#C9A84C" stroke-width="1" stroke-dasharray="8 4" opacity="0.25" class="rot-slow-r"/>
+      </g>
+      <!-- Secondary mandala left -->
+      <g transform="translate(-100,200)">
+        <circle r="220" fill="none" stroke="#C9A84C" stroke-width="0.4" stroke-dasharray="12 6" opacity="0.12" class="rot-slow-r"/>
+        <circle r="160" fill="none" stroke="#C9A84C" stroke-width="0.6" stroke-dasharray="8 4" opacity="0.15" class="rot-slow"/>
+      </g>
+      <!-- Diamond strip bottom -->
+      <rect x="0" y="860" width="1400" height="40" fill="url(#hero-rope)" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <!-- Floating wood grain panels -->
+  <div class="hero-wood-panels">
+    <div class="wood-panel wp-1"></div>
+    <div class="wood-panel wp-2"></div>
+    <div class="wood-panel wp-3"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text" data-scroll-reveal>
+      <div class="hero-eyebrow">
+        <span class="eyebrow-line"></span>
+        <span>✦ Since 1987 · Addis Ababa ✦</span>
+        <span class="eyebrow-line"></span>
+      </div>
+      <h1 class="hero-title">
+        <span class="ht-line">Where</span>
+        <span class="ht-line ht-gold"><em>Ancient Wood</em></span>
+        <span class="ht-line">Tells New Stories</span>
+      </h1>
+      <p class="hero-desc">Every piece is carved by hand, never a machine — bearing the intricate patterns of Ethiopian heritage in every groove, every curve, every breath of cedar.</p>
+      <div class="hero-actions">
+        <a href="#collections" class="btn-primary">
+          <span>Explore Collection</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#about" class="btn-secondary">Our Heritage</a>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat"><span class="h-stat-n" data-count="38">0</span><span class="h-stat-u">+</span><span class="h-stat-l">Years of Craft</span></div>
+        <div class="h-stat-div"></div>
+        <div class="h-stat"><span class="h-stat-n" data-count="12">0</span><span class="h-stat-u"></span><span class="h-stat-l">Master Artisans</span></div>
+        <div class="h-stat-div"></div>
+        <div class="h-stat"><span class="h-stat-n" data-count="100">0</span><span class="h-stat-u">%</span><span class="h-stat-l">Handmade</span></div>
+      </div>
+    </div>
+
+    <!-- Hero 3D Mandala -->
+    <div class="hero-visual" id="heroVisual">
+      <div class="hero-card-3d" id="heroCard">
+        <svg class="hero-mandala-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="mgrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#3D1A00"/>
+              <stop offset="70%" stop-color="#2C1400"/>
+              <stop offset="100%" stop-color="#1A0C02"/>
+            </radialGradient>
+            <filter id="glow">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <rect width="400" height="400" fill="url(#mgrad)" rx="16"/>
+          <!-- Outer rings -->
+          <circle cx="200" cy="200" r="185" fill="none" stroke="#C9A84C" stroke-width="1" stroke-dasharray="12 5" class="spin-slow" filter="url(#glow)"/>
+          <circle cx="200" cy="200" r="170" fill="none" stroke="#C9A84C" stroke-width="3" stroke-dasharray="18 8" class="spin-slow-r" opacity="0.6"/>
+          <circle cx="200" cy="200" r="155" fill="#1A0C02" stroke="#8B5E1A" stroke-width="2"/>
+          <circle cx="200" cy="200" r="148" fill="none" stroke="#C9A84C" stroke-width="1" stroke-dasharray="10 5" class="spin-slow" opacity="0.7"/>
+          <!-- Middle band -->
+          <circle cx="200" cy="200" r="136" fill="#2C1400" stroke="#C9A84C" stroke-width="1.5" opacity="0.9"/>
+          <circle cx="200" cy="200" r="124" fill="none" stroke="#C9A84C" stroke-width="2" class="spin-slow-r" opacity="0.5"/>
+          <!-- Inner band -->
+          <circle cx="200" cy="200" r="110" fill="#3D1C02" stroke="#8B5E1A" stroke-width="1.5"/>
+          <!-- Leaf/petal spokes -->
+          <g stroke="#C9A84C" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#glow)">
+            <path d="M200 90 Q220 130 200 170 Q180 130 200 90" opacity="0.9"/>
+            <path d="M200 310 Q220 270 200 230 Q180 270 200 310" opacity="0.9"/>
+            <path d="M90 200 Q130 220 170 200 Q130 180 90 200" opacity="0.9"/>
+            <path d="M310 200 Q270 220 230 200 Q270 180 310 200" opacity="0.9"/>
+            <path d="M118 118 Q148 148 148 180 Q120 156 118 118" opacity="0.7"/>
+            <path d="M282 118 Q252 148 252 180 Q280 156 282 118" opacity="0.7"/>
+            <path d="M118 282 Q148 252 148 220 Q120 244 118 282" opacity="0.7"/>
+            <path d="M282 282 Q252 252 252 220 Q280 244 282 282" opacity="0.7"/>
+          </g>
+          <!-- Inner lattice -->
+          <rect x="165" y="165" width="70" height="70" fill="#1A0C02" stroke="#C9A84C" stroke-width="1.5" rx="2"/>
+          <line x1="165" y1="176" x2="235" y2="176" stroke="#C9A84C" stroke-width="0.8"/>
+          <line x1="165" y1="188" x2="235" y2="188" stroke="#C9A84C" stroke-width="0.8"/>
+          <line x1="165" y1="200" x2="235" y2="200" stroke="#C9A84C" stroke-width="0.8"/>
+          <line x1="165" y1="212" x2="235" y2="212" stroke="#C9A84C" stroke-width="0.8"/>
+          <line x1="165" y1="224" x2="235" y2="224" stroke="#C9A84C" stroke-width="0.8"/>
+          <line x1="176" y1="165" x2="176" y2="235" stroke="#C9A84C" stroke-width="0.8"/>
+          <line x1="188" y1="165" x2="188" y2="235" stroke="#C9A84C" stroke-width="0.8"/>
+          <line x1="200" y1="165" x2="200" y2="235" stroke="#C9A84C" stroke-width="0.8"/>
+          <line x1="212" y1="165" x2="212" y2="235" stroke="#C9A84C" stroke-width="0.8"/>
+          <line x1="224" y1="165" x2="224" y2="235" stroke="#C9A84C" stroke-width="0.8"/>
+          <!-- Center jewel -->
+          <rect x="188" y="188" width="24" height="24" fill="#C9A84C" rx="2" opacity="0.85" filter="url(#glow)"/>
+          <line x1="188" y1="200" x2="212" y2="200" stroke="#1A0C02" stroke-width="2"/>
+          <line x1="200" y1="188" x2="200" y2="212" stroke="#1A0C02" stroke-width="2"/>
+          <!-- Corner ornaments -->
+          <rect x="44" y="44" width="28" height="28" fill="#2C1400" stroke="#C9A84C" stroke-width="1.5" rx="2"/>
+          <path d="M47 47 L69 69 M69 47 L47 69" stroke="#C9A84C" stroke-width="1.2"/>
+          <rect x="328" y="44" width="28" height="28" fill="#2C1400" stroke="#C9A84C" stroke-width="1.5" rx="2"/>
+          <path d="M331 47 L353 69 M353 47 L331 69" stroke="#C9A84C" stroke-width="1.2"/>
+          <rect x="44" y="328" width="28" height="28" fill="#2C1400" stroke="#C9A84C" stroke-width="1.5" rx="2"/>
+          <path d="M47 331 L69 353 M69 331 L47 353" stroke="#C9A84C" stroke-width="1.2"/>
+          <rect x="328" y="328" width="28" height="28" fill="#2C1400" stroke="#C9A84C" stroke-width="1.5" rx="2"/>
+          <path d="M331 331 L353 353 M353 331 L331 353" stroke="#C9A84C" stroke-width="1.2"/>
+          <!-- Rope border top/bottom -->
+          <defs>
+            <pattern id="rope-hero" x="0" y="0" width="20" height="14" patternUnits="userSpaceOnUse">
+              <path d="M0 3 Q5 0 10 3 Q15 6 20 3" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M0 10 Q5 7 10 10 Q15 13 20 10" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M0 6 Q5 9 10 6 Q15 3 20 6" fill="none" stroke="#7A4E0A" stroke-width="1" stroke-linecap="round"/>
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="400" height="14" fill="url(#rope-hero)" opacity="0.8"/>
+          <rect x="0" y="386" width="400" height="14" fill="url(#rope-hero)" opacity="0.8"/>
+          <!-- Gloss overlay -->
+          <rect width="400" height="200" fill="url(#gloss)" opacity="0.05" rx="16"/>
+          <defs>
+            <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="white" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="white" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <!-- Floating badge -->
+        <div class="hero-card-badge">
+          <span class="badge-year">1987</span>
+          <span class="badge-text">Est. Addis Ababa</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll">
+    <div class="scroll-mouse">
+      <div class="scroll-wheel"></div>
+    </div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     DIVIDER STRIP
+═══════════════════════════════════════════════ -->
+<div class="divider-strip">
+  <svg width="100%" height="50" viewBox="0 0 1400 50" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <pattern id="div-rope" x="0" y="0" width="28" height="13" patternUnits="userSpaceOnUse">
+        <path d="M0 3 Q7 0 14 3 Q21 6 28 3" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+        <path d="M0 10 Q7 7 14 10 Q21 13 28 10" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+        <path d="M0 6 Q7 9 14 6 Q21 3 28 6" fill="none" stroke="#7A4E0A" stroke-width="1.2" stroke-linecap="round"/>
+      </pattern>
+      <pattern id="div-diamond" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+        <rect width="26" height="26" fill="#2C1400"/>
+        <polygon points="13,2 23,13 13,24 3,13" fill="#C9A84C" opacity="0.85"/>
+        <polygon points="13,6 19,13 13,20 7,13" fill="#1A0C02"/>
+        <line x1="13" y1="6" x2="13" y2="20" stroke="#C9A84C" stroke-width="0.9"/>
+        <line x1="7" y1="13" x2="19" y2="13" stroke="#C9A84C" stroke-width="0.9"/>
+      </pattern>
+    </defs>
+    <rect width="1400" height="13" fill="url(#div-rope)"/>
+    <rect y="37" width="1400" height="13" fill="url(#div-rope)"/>
+    <rect y="13" width="1400" height="24" fill="url(#div-diamond)"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PATTERN SHOWCASE
+═══════════════════════════════════════════════ -->
+<section class="patterns-section section-dark">
+  <div class="container">
+    <div class="section-header" data-scroll-reveal>
+      <div class="section-label">✦ The Art of the Hand ✦</div>
+      <h2 class="section-title light">Three Signatures<br><em>of Kibran Craft</em></h2>
+      <p class="section-desc light">Each pattern drawn from our actual workshop carvings — rope twist, Celtic knot, geometric lattice — translated faithfully into every surface we touch.</p>
+    </div>
+
+    <div class="patterns-grid">
+      <!-- Pattern 1 -->
+      <div class="pattern-card-wrap" data-scroll-reveal data-delay="0">
+        <div class="pattern-card">
+          <div class="pattern-card-inner">
+            <svg class="pattern-svg" viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="200" fill="#1A0C02"/>
+              <defs>
+                <pattern id="rc1" x="0" y="0" width="22" height="16" patternUnits="userSpaceOnUse">
+                  <path d="M0 4 Q5.5 0 11 4 Q16.5 8 22 4" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M0 12 Q5.5 8 11 12 Q16.5 16 22 12" fill="none" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round"/>
+                  <path d="M0 8 Q5.5 12 11 8 Q16.5 4 22 8" fill="none" stroke="#8B5E1A" stroke-width="1.2" stroke-linecap="round"/>
+                </pattern>
+                <pattern id="dc1" x="0" y="0" width="24" height="52" patternUnits="userSpaceOnUse">
+                  <polygon points="12,2 21,12 12,22 3,12" fill="#C9A84C" opacity="0.9"/>
+                  <polygon points="12,5 17,12 12,19 7,12" fill="#1A0C02"/>
+                  <line x1="12" y1="5" x2="12" y2="19" stroke="#C9A84C" stroke-width="0.8"/>
+                  <line x1="7" y1="12" x2="17" y2="12" stroke="#C9A84C" stroke-width="0.8"/>
+                  <polygon points="12,34 21,44 12,54 3,44" fill="#C9A84C" opacity="0.55"/>
+                  <polygon points="12,37 17,44 12,51 7,44" fill="#1A0C02"/>
+                </pattern>
+              </defs>
+              <rect x="14" y="14" width="252" height="20" fill="url(#rc1)"/>
+              <rect x="14" y="166" width="252" height="20" fill="url(#rc1)"/>
+              <rect x="14" y="36" width="252" height="130" fill="url(#dc1)"/>
+              <rect x="14" y="14" width="252" height="172" fill="none" stroke="#C9A84C" stroke-width="2"/>
+            </svg>
+            <div class="pattern-card-overlay">
+              <div class="pco-icon">⊕</div>
+              <div class="pco-text">View in Collection</div>
+            </div>
+          </div>
+          <div class="pattern-card-body">
+            <div class="pattern-num">፩</div>
+            <h3 class="pattern-name">Rope-Twist & Diamond</h3>
+            <p class="pattern-desc-text">The ancient rope-twist border appears on every Kibran piece — a continuous strand symbolising life's unbroken journey, punctuated by the diamond of prosperity.</p>
+            <div class="pattern-tag">Table Edges · Cabinet Frames · Door Panels</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pattern 2 -->
+      <div class="pattern-card-wrap" data-scroll-reveal data-delay="150">
+        <div class="pattern-card">
+          <div class="pattern-card-inner">
+            <svg class="pattern-svg" viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="200" fill="#1A0C02"/>
+              <defs>
+                <pattern id="rc2" x="0" y="0" width="20" height="16" patternUnits="userSpaceOnUse">
+                  <path d="M0 4 Q5 0 10 4 Q15 8 20 4" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M0 12 Q5 8 10 12 Q15 16 20 12" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M0 8 Q5 12 10 8 Q15 4 20 8" fill="none" stroke="#7A4E0A" stroke-width="1" stroke-linecap="round"/>
+                </pattern>
+              </defs>
+              <rect x="10" y="10" width="260" height="180" fill="none" stroke="#C9A84C" stroke-width="2"/>
+              <rect x="10" y="10" width="260" height="18" fill="url(#rc2)"/>
+              <rect x="10" y="172" width="260" height="18" fill="url(#rc2)"/>
+              <rect x="10" y="10" width="18" height="180" fill="url(#rc2)"/>
+              <rect x="252" y="10" width="18" height="180" fill="url(#rc2)"/>
+              <g transform="translate(140,100)" fill="none" stroke="#C9A84C" stroke-width="2.5" stroke-linecap="round">
+                <path d="M0,-40 Q28,-28 28,0 Q28,28 0,28 Q-18,20 -18,0 Q-18,-20 0,-20 Q20,-20 20,0 Q20,20 0,20"/>
+                <path d="M0,40 Q-28,28 -28,0 Q-28,-28 0,-28 Q18,-20 18,0 Q18,20 0,20 Q-20,20 -20,0 Q-20,-20 0,-20"/>
+                <circle cx="0" cy="0" r="9" stroke-width="2"/>
+                <circle cx="0" cy="0" r="4" fill="#C9A84C"/>
+              </g>
+              <rect x="10" y="10" width="22" height="22" fill="#3D1C02" stroke="#C9A84C" stroke-width="1"/>
+              <path d="M13 13 L29 29 M29 13 L13 29" stroke="#C9A84C" stroke-width="1"/>
+              <rect x="248" y="10" width="22" height="22" fill="#3D1C02" stroke="#C9A84C" stroke-width="1"/>
+              <path d="M251 13 L267 29 M267 13 L251 29" stroke="#C9A84C" stroke-width="1"/>
+              <rect x="10" y="168" width="22" height="22" fill="#3D1C02" stroke="#C9A84C" stroke-width="1"/>
+              <path d="M13 171 L29 187 M29 171 L13 187" stroke="#C9A84C" stroke-width="1"/>
+              <rect x="248" y="168" width="22" height="22" fill="#3D1C02" stroke="#C9A84C" stroke-width="1"/>
+              <path d="M251 171 L267 187 M267 171 L251 187" stroke="#C9A84C" stroke-width="1"/>
+            </svg>
+            <div class="pattern-card-overlay">
+              <div class="pco-icon">⊕</div>
+              <div class="pco-text">View in Collection</div>
+            </div>
+          </div>
+          <div class="pattern-card-body">
+            <div class="pattern-num">፪</div>
+            <h3 class="pattern-name">Celtic Knot Panel</h3>
+            <p class="pattern-desc-text">The infinity knot — two strands that weave without end — is a universal symbol of eternity adopted deep into Ethiopian Orthodox decorative tradition.</p>
+            <div class="pattern-tag">Wall Panels · Cabinet Doors · Headboards</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pattern 3 -->
+      <div class="pattern-card-wrap" data-scroll-reveal data-delay="300">
+        <div class="pattern-card">
+          <div class="pattern-card-inner">
+            <svg class="pattern-svg" viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
+              <rect width="280" height="200" fill="#1A0C02"/>
+              <defs>
+                <pattern id="lat3" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+                  <rect width="22" height="22" fill="#2C1400"/>
+                  <rect x="2" y="2" width="18" height="18" fill="none" stroke="#C9A84C" stroke-width="0.9"/>
+                  <rect x="7" y="7" width="8" height="8" fill="#C9A84C" opacity="0.7"/>
+                  <line x1="2" y1="11" x2="20" y2="11" stroke="#C9A84C" stroke-width="0.5"/>
+                  <line x1="11" y1="2" x2="11" y2="20" stroke="#C9A84C" stroke-width="0.5"/>
+                </pattern>
+                <pattern id="rc3" x="0" y="0" width="20" height="16" patternUnits="userSpaceOnUse">
+                  <path d="M0 4 Q5 0 10 4 Q15 8 20 4" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M0 12 Q5 8 10 12 Q15 16 20 12" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+                  <path d="M0 8 Q5 12 10 8 Q15 4 20 8" fill="none" stroke="#7A4E0A" stroke-width="1" stroke-linecap="round"/>
+                </pattern>
+              </defs>
+              <rect x="10" y="10" width="260" height="18" fill="url(#rc3)"/>
+              <rect x="10" y="172" width="260" height="18" fill="url(#rc3)"/>
+              <rect x="10" y="10" width="18" height="180" fill="url(#rc3)"/>
+              <rect x="252" y="10" width="18" height="180" fill="url(#rc3)"/>
+              <rect x="32" y="32" width="216" height="136" fill="url(#lat3)"/>
+              <rect x="10" y="10" width="260" height="180" fill="none" stroke="#C9A84C" stroke-width="2"/>
+              <rect x="10" y="10" width="26" height="26" fill="#3D1C02" stroke="#C9A84C" stroke-width="1"/>
+              <path d="M13 13 L33 33 M33 13 L13 33" stroke="#C9A84C" stroke-width="0.9"/>
+              <rect x="244" y="10" width="26" height="26" fill="#3D1C02" stroke="#C9A84C" stroke-width="1"/>
+              <path d="M247 13 L267 33 M267 13 L247 33" stroke="#C9A84C" stroke-width="0.9"/>
+              <rect x="10" y="164" width="26" height="26" fill="#3D1C02" stroke="#C9A84C" stroke-width="1"/>
+              <path d="M13 167 L33 187 M33 167 L13 187" stroke="#C9A84C" stroke-width="0.9"/>
+              <rect x="244" y="164" width="26" height="26" fill="#3D1C02" stroke="#C9A84C" stroke-width="1"/>
+              <path d="M247 167 L267 187 M267 167 L247 187" stroke="#C9A84C" stroke-width="0.9"/>
+            </svg>
+            <div class="pattern-card-overlay">
+              <div class="pco-icon">⊕</div>
+              <div class="pco-text">View in Collection</div>
+            </div>
+          </div>
+          <div class="pattern-card-body">
+            <div class="pattern-num">፫</div>
+            <h3 class="pattern-name">Geometric Lattice</h3>
+            <p class="pattern-desc-text">The square lattice echoes Axumite architectural stonework — a grid of nested squares that builds infinite depth from simple repetition, like light through a carved window.</p>
+            <div class="pattern-tag">Panel Inlays · Drawer Fronts · Screens</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     GALLERY
+═══════════════════════════════════════════════ -->
+<section id="gallery" class="gallery-section section-dark">
+  <div class="container">
+    <div class="section-header" data-scroll-reveal>
+      <div class="section-label">✦ ፩፪፫ — From the Workshop ✦</div>
+      <h2 class="section-title light">The Pieces<br><em>Themselves</em></h2>
+      <p class="section-desc light">Every photograph from our Addis Ababa workshop. Real wood, real light, real craft.</p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <!-- PIECE 1: Arch Mirror Vanity (showroom) -->
+      <div class="gallery-item" data-scroll-reveal data-delay="0">
+        <div class="gallery-card">
+          <div class="gallery-img-wrap" data-num="፩">
+            <img src="images/gallery/photo_2023-12-09_18-35-58.jpg" alt="Arch Mirror Vanity" class="gallery-photo"/>
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-inner">
+                <div class="gal-cat">Vanity Set · ፩</div>
+                <h3 class="gal-title">Harar Arch Vanity</h3>
+                <div class="gal-price">ETB 88,000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PIECE 2: Bed Frame -->
+      <div class="gallery-item" data-scroll-reveal data-delay="100">
+        <div class="gallery-card">
+          <div class="gallery-img-wrap" data-num="፪">
+            <img src="images/gallery/photo_2023-12-16_19-23-00.jpg" alt="King Bed Frame" class="gallery-photo"/>
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-inner">
+                <div class="gal-cat">Bedroom · ፪</div>
+                <h3 class="gal-title">Selam King Bed Frame</h3>
+                <div class="gal-price">ETB 72,000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PIECE 3: Rectangular Vanity -->
+      <div class="gallery-item" data-scroll-reveal data-delay="200">
+        <div class="gallery-card">
+          <div class="gallery-img-wrap" data-num="፫">
+            <img src="images/gallery/photo_2023-12-16_19-23-01.jpg" alt="Rectangular Mirror Vanity" class="gallery-photo"/>
+            <div class="gallery-overlay">
+              <div class="gallery-overlay-inner">
+                <div class="gal-cat">Vanity Set · ፫</div>
+                <h3 class="gal-title">Desta Dressing Vanity</h3>
+                <div class="gal-price">ETB 65,000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Gallery CTA -->
+    <div class="gallery-cta" data-scroll-reveal>
+      <p class="gallery-cta-text">All pieces in these photographs are available to commission. Each one is made fresh — no two identical.</p>
+      <a href="#contact" class="btn-primary">Enquire About a Piece</a>
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="divider-strip divider-light">
+  <svg width="100%" height="50" viewBox="0 0 1400 50" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <pattern id="div-rope2" x="0" y="0" width="28" height="13" patternUnits="userSpaceOnUse">
+        <path d="M0 3 Q7 0 14 3 Q21 6 28 3" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+        <path d="M0 10 Q7 7 14 10 Q21 13 28 10" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+        <path d="M0 6 Q7 9 14 6 Q21 3 28 6" fill="none" stroke="#8B5E1A" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+      </pattern>
+      <pattern id="div-diamond2" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+        <rect width="26" height="26" fill="#F0E5CC"/>
+        <polygon points="13,2 23,13 13,24 3,13" fill="#C9A84C" opacity="0.3"/>
+        <polygon points="13,6 19,13 13,20 7,13" fill="#F0E5CC"/>
+        <line x1="13" y1="6" x2="13" y2="20" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+        <line x1="7" y1="13" x2="19" y2="13" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+      </pattern>
+    </defs>
+    <rect width="1400" height="13" fill="url(#div-rope2)"/>
+    <rect y="37" width="1400" height="13" fill="url(#div-rope2)"/>
+    <rect y="13" width="1400" height="24" fill="url(#div-diamond2)"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     COLLECTIONS
+═══════════════════════════════════════════════ -->
+<section id="collections" class="collections-section">
+  <div class="container">
+    <div class="section-header" data-scroll-reveal>
+      <div class="section-label">✦ Handcrafted Pieces ✦</div>
+      <h2 class="section-title">The Kibran<br><em>Collection</em></h2>
+      <p class="section-desc">Each piece is unique — carved over weeks, stained by hand, finished with generations of knowledge. No two are exactly alike.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- Product 1 -->
+      <article class="prod-card tilt-card" data-scroll-reveal data-delay="0">
+        <div class="prod-img-wrap" data-tilt>
+          <svg class="prod-bg-svg" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="220" fill="#1A0C02"/>
+            <defs>
+              <pattern id="mb1" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
+                <circle cx="25" cy="25" r="20" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.3"/>
+                <circle cx="25" cy="25" r="12" fill="none" stroke="#C9A84C" stroke-width="0.4" opacity="0.25"/>
+                <rect x="19" y="19" width="12" height="12" fill="none" stroke="#C9A84C" stroke-width="0.4" opacity="0.35"/>
+              </pattern>
+            </defs>
+            <rect width="340" height="220" fill="url(#mb1)"/>
+            <circle cx="170" cy="110" r="85" fill="none" stroke="#C9A84C" stroke-width="3" stroke-dasharray="12 6"/>
+            <circle cx="170" cy="110" r="68" fill="#2C1400" stroke="#C9A84C" stroke-width="1.5"/>
+            <circle cx="170" cy="110" r="54" fill="none" stroke="#C9A84C" stroke-width="1" stroke-dasharray="8 4"/>
+            <rect x="148" y="88" width="44" height="44" fill="#1A0C02" stroke="#C9A84C" stroke-width="1.2"/>
+            <line x1="148" y1="99" x2="192" y2="99" stroke="#C9A84C" stroke-width="0.8"/>
+            <line x1="148" y1="110" x2="192" y2="110" stroke="#C9A84C" stroke-width="0.8"/>
+            <line x1="148" y1="121" x2="192" y2="121" stroke="#C9A84C" stroke-width="0.8"/>
+            <line x1="159" y1="88" x2="159" y2="132" stroke="#C9A84C" stroke-width="0.8"/>
+            <line x1="170" y1="88" x2="170" y2="132" stroke="#C9A84C" stroke-width="0.8"/>
+            <line x1="181" y1="88" x2="181" y2="132" stroke="#C9A84C" stroke-width="0.8"/>
+          </svg>
+          <div class="prod-badge new">New</div>
+          <div class="prod-3d-glow"></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-category">Cabinet</div>
+          <h3 class="prod-name">Desta Cabinet</h3>
+          <p class="prod-desc-text">Full mandala-carved front panels, rope-twist edging on all four sides, deep ebony stain. Solid Ethiopian cedar, three internal drawers.</p>
+          <div class="prod-footer">
+            <div class="prod-price">ETB 48,000</div>
+            <button class="prod-btn">Enquire</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 2 -->
+      <article class="prod-card tilt-card" data-scroll-reveal data-delay="150">
+        <div class="prod-img-wrap" data-tilt>
+          <svg class="prod-bg-svg" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="220" fill="#1A0C02"/>
+            <defs>
+              <pattern id="rc-p2" x="0" y="0" width="20" height="16" patternUnits="userSpaceOnUse">
+                <path d="M0 4 Q5 0 10 4 Q15 8 20 4" fill="none" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" opacity="0.4"/>
+                <path d="M0 12 Q5 8 10 12 Q15 16 20 12" fill="none" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" opacity="0.4"/>
+                <path d="M0 8 Q5 12 10 8 Q15 4 20 8" fill="none" stroke="#7A4E0A" stroke-width="0.9" stroke-linecap="round" opacity="0.3"/>
+              </pattern>
+            </defs>
+            <rect width="340" height="220" fill="url(#rc-p2)"/>
+            <rect x="20" y="20" width="300" height="180" fill="none" stroke="#C9A84C" stroke-width="2"/>
+            <g transform="translate(170,110)" fill="none" stroke="#C9A84C" stroke-width="3" stroke-linecap="round">
+              <path d="M0,-52 Q38,-38 38,0 Q38,38 0,38 Q-24,28 -24,0 Q-24,-28 0,-28 Q28,-28 28,0 Q28,28 0,28"/>
+              <path d="M0,52 Q-38,38 -38,0 Q-38,-38 0,-38 Q24,-28 24,0 Q24,28 0,28 Q-28,28 -28,0 Q-28,-28 0,-28"/>
+              <circle cx="0" cy="0" r="12"/>
+              <circle cx="0" cy="0" r="5" fill="#C9A84C"/>
+            </g>
+            <rect x="20" y="20" width="24" height="24" fill="#2C1400" stroke="#C9A84C" stroke-width="1"/>
+            <path d="M23 23 L41 41 M41 23 L23 41" stroke="#C9A84C" stroke-width="1"/>
+            <rect x="296" y="20" width="24" height="24" fill="#2C1400" stroke="#C9A84C" stroke-width="1"/>
+            <path d="M299 23 L317 41 M317 23 L299 41" stroke="#C9A84C" stroke-width="1"/>
+            <rect x="20" y="176" width="24" height="24" fill="#2C1400" stroke="#C9A84C" stroke-width="1"/>
+            <path d="M23 179 L41 197 M41 179 L23 197" stroke="#C9A84C" stroke-width="1"/>
+            <rect x="296" y="176" width="24" height="24" fill="#2C1400" stroke="#C9A84C" stroke-width="1"/>
+            <path d="M299 179 L317 197 M317 179 L299 197" stroke="#C9A84C" stroke-width="1"/>
+          </svg>
+          <div class="prod-badge bestseller">Best Seller</div>
+          <div class="prod-3d-glow"></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-category">Wall Art</div>
+          <h3 class="prod-name">Celtic Knot Panel</h3>
+          <p class="prod-desc-text">4-fold infinity knotwork carved in full relief, rope-twist border, cross-X corner accents. Ready to hang with hand-forged iron brackets.</p>
+          <div class="prod-footer">
+            <div class="prod-price">ETB 22,000</div>
+            <button class="prod-btn">Enquire</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 3 -->
+      <article class="prod-card tilt-card" data-scroll-reveal data-delay="300">
+        <div class="prod-img-wrap" data-tilt>
+          <svg class="prod-bg-svg" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="220" fill="#2C1400"/>
+            <defs>
+              <pattern id="lat-p3" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect width="20" height="20" fill="#2C1400"/>
+                <rect x="1" y="1" width="18" height="18" fill="none" stroke="#C9A84C" stroke-width="0.7" opacity="0.6"/>
+                <rect x="5" y="5" width="10" height="10" fill="#C9A84C" opacity="0.45"/>
+                <line x1="1" y1="10" x2="19" y2="10" stroke="#C9A84C" stroke-width="0.4" opacity="0.5"/>
+                <line x1="10" y1="1" x2="10" y2="19" stroke="#C9A84C" stroke-width="0.4" opacity="0.5"/>
+              </pattern>
+              <pattern id="rc-p3" x="0" y="0" width="20" height="16" patternUnits="userSpaceOnUse">
+                <path d="M0 4 Q5 0 10 4 Q15 8 20 4" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M0 12 Q5 8 10 12 Q15 16 20 12" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M0 8 Q5 12 10 8 Q15 4 20 8" fill="none" stroke="#7A4E0A" stroke-width="1" stroke-linecap="round"/>
+              </pattern>
+            </defs>
+            <rect x="12" y="12" width="316" height="18" fill="url(#rc-p3)"/>
+            <rect x="12" y="190" width="316" height="18" fill="url(#rc-p3)"/>
+            <rect x="12" y="12" width="18" height="196" fill="url(#rc-p3)"/>
+            <rect x="310" y="12" width="18" height="196" fill="url(#rc-p3)"/>
+            <rect x="36" y="36" width="268" height="148" fill="url(#lat-p3)"/>
+            <rect x="12" y="12" width="316" height="196" fill="none" stroke="#C9A84C" stroke-width="1.5"/>
+          </svg>
+          <div class="prod-3d-glow"></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-category">Wall Art</div>
+          <h3 class="prod-name">Lattice Square Panel</h3>
+          <p class="prod-desc-text">Geometric interlocking grid in deep relief carving, mahogany stain. The Axumite lattice — light and shadow made permanent in wood.</p>
+          <div class="prod-footer">
+            <div class="prod-price">ETB 18,500</div>
+            <button class="prod-btn">Enquire</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 4 -->
+      <article class="prod-card tilt-card" data-scroll-reveal data-delay="0">
+        <div class="prod-img-wrap" data-tilt>
+          <svg class="prod-bg-svg" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="220" fill="#1A0C02"/>
+            <defs>
+              <pattern id="mb4" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                <circle cx="20" cy="20" r="16" fill="none" stroke="#C9A84C" stroke-width="0.5" opacity="0.25"/>
+                <circle cx="20" cy="20" r="8" fill="none" stroke="#C9A84C" stroke-width="0.4" opacity="0.2"/>
+              </pattern>
+            </defs>
+            <rect width="340" height="220" fill="url(#mb4)"/>
+            <!-- Dining table top view -->
+            <rect x="60" y="40" width="220" height="140" rx="8" fill="#2C1400" stroke="#C9A84C" stroke-width="2"/>
+            <!-- mandala pattern on table -->
+            <circle cx="170" cy="110" r="52" fill="none" stroke="#C9A84C" stroke-width="2" stroke-dasharray="8 4"/>
+            <circle cx="170" cy="110" r="40" fill="#1A0C02" stroke="#C9A84C" stroke-width="1.5"/>
+            <circle cx="170" cy="110" r="30" fill="none" stroke="#C9A84C" stroke-width="1"/>
+            <rect x="158" y="98" width="24" height="24" fill="#2C1400" stroke="#C9A84C" stroke-width="1"/>
+            <line x1="158" y1="110" x2="182" y2="110" stroke="#C9A84C" stroke-width="0.8"/>
+            <line x1="170" y1="98" x2="170" y2="122" stroke="#C9A84C" stroke-width="0.8"/>
+            <!-- legs suggestion -->
+            <rect x="68" y="170" width="12" height="30" fill="#2C1400" stroke="#C9A84C" stroke-width="1" rx="2"/>
+            <rect x="260" y="170" width="12" height="30" fill="#2C1400" stroke="#C9A84C" stroke-width="1" rx="2"/>
+            <rect x="68" y="20" width="12" height="30" fill="#2C1400" stroke="#C9A84C" stroke-width="1" rx="2"/>
+            <rect x="260" y="20" width="12" height="30" fill="#2C1400" stroke="#C9A84C" stroke-width="1" rx="2"/>
+          </svg>
+          <div class="prod-badge limited">Limited</div>
+          <div class="prod-3d-glow"></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-category">Dining</div>
+          <h3 class="prod-name">Merkeb Dining Table</h3>
+          <p class="prod-desc-text">Six-seat dining table with full mandala top inlay, rope-twist carved apron, turned legs with diamond-point feet. Ethiopian rosewood.</p>
+          <div class="prod-footer">
+            <div class="prod-price">ETB 95,000</div>
+            <button class="prod-btn">Enquire</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 5 -->
+      <article class="prod-card tilt-card" data-scroll-reveal data-delay="150">
+        <div class="prod-img-wrap" data-tilt>
+          <svg class="prod-bg-svg" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="220" fill="#1A0C02"/>
+            <defs>
+              <pattern id="rc5" x="0" y="0" width="20" height="14" patternUnits="userSpaceOnUse">
+                <path d="M0 3 Q5 0 10 3 Q15 6 20 3" fill="none" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" opacity="0.35"/>
+                <path d="M0 10 Q5 7 10 10 Q15 13 20 10" fill="none" stroke="#C9A84C" stroke-width="1.6" stroke-linecap="round" opacity="0.35"/>
+              </pattern>
+            </defs>
+            <rect width="340" height="220" fill="url(#rc5)"/>
+            <!-- Bed headboard top view -->
+            <rect x="40" y="30" width="260" height="100" rx="6" fill="#2C1400" stroke="#C9A84C" stroke-width="2"/>
+            <!-- 3 carved panels on headboard -->
+            <rect x="52" y="42" width="70" height="76" fill="#1A0C02" stroke="#C9A84C" stroke-width="1.2"/>
+            <circle cx="87" cy="80" r="26" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="6 3"/>
+            <circle cx="87" cy="80" r="18" fill="#2C1400" stroke="#C9A84C" stroke-width="1"/>
+            <rect x="81" y="74" width="12" height="12" fill="#C9A84C" opacity="0.5"/>
+            <rect x="135" y="42" width="70" height="76" fill="#1A0C02" stroke="#C9A84C" stroke-width="1.2"/>
+            <g transform="translate(170,80)" fill="none" stroke="#C9A84C" stroke-width="1.8">
+              <path d="M0,-24 Q18,-18 18,0 Q18,18 0,18 Q-12,12 -12,0 Q-12,-12 0,-12 Q12,-12 12,0"/>
+              <path d="M0,24 Q-18,18 -18,0 Q-18,-18 0,-18 Q12,-12 12,0 Q12,12 0,12 Q-12,12 -12,0"/>
+              <circle cx="0" cy="0" r="5"/>
+              <circle cx="0" cy="0" r="2" fill="#C9A84C"/>
+            </g>
+            <rect x="218" y="42" width="70" height="76" fill="#1A0C02" stroke="#C9A84C" stroke-width="1.2"/>
+            <defs><pattern id="lat5" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+              <rect width="12" height="12" fill="#2C1400"/>
+              <rect x="1" y="1" width="10" height="10" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.7"/>
+              <rect x="4" y="4" width="4" height="4" fill="#C9A84C" opacity="0.5"/>
+            </pattern></defs>
+            <rect x="220" y="44" width="66" height="72" fill="url(#lat5)"/>
+          </svg>
+          <div class="prod-3d-glow"></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-category">Bedroom</div>
+          <h3 class="prod-name">Selam Bed Frame</h3>
+          <p class="prod-desc-text">King-size frame with a triple-panel carved headboard — mandala, Celtic knot, and lattice side by side. Hewn from solid wanza wood.</p>
+          <div class="prod-footer">
+            <div class="prod-price">ETB 72,000</div>
+            <button class="prod-btn">Enquire</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product 6 -->
+      <article class="prod-card tilt-card" data-scroll-reveal data-delay="300">
+        <div class="prod-img-wrap" data-tilt>
+          <svg class="prod-bg-svg" viewBox="0 0 340 220" xmlns="http://www.w3.org/2000/svg">
+            <rect width="340" height="220" fill="#1A0C02"/>
+            <defs>
+              <pattern id="lat6" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse">
+                <rect width="18" height="18" fill="#2C1400"/>
+                <rect x="1" y="1" width="16" height="16" fill="none" stroke="#C9A84C" stroke-width="0.6" opacity="0.45"/>
+                <rect x="5" y="5" width="8" height="8" fill="#C9A84C" opacity="0.4"/>
+              </pattern>
+            </defs>
+            <rect width="340" height="220" fill="url(#lat6)"/>
+            <!-- Door frame -->
+            <rect x="90" y="20" width="160" height="180" rx="4" fill="#2C1400" stroke="#C9A84C" stroke-width="2"/>
+            <!-- Arched top -->
+            <path d="M90 80 Q170 20 250 80" fill="#1A0C02" stroke="#C9A84C" stroke-width="2"/>
+            <!-- Carved arch decoration -->
+            <path d="M100 82 Q170 30 240 82" fill="none" stroke="#C9A84C" stroke-width="1" stroke-dasharray="6 3"/>
+            <!-- Lower panel lattice -->
+            <rect x="102" y="92" width="136" height="96" fill="url(#lat6)" stroke="#C9A84C" stroke-width="1"/>
+            <!-- Mandala arch center -->
+            <circle cx="170" cy="64" r="28" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="6 3"/>
+            <circle cx="170" cy="64" r="20" fill="#2C1400" stroke="#C9A84C" stroke-width="1"/>
+            <rect x="164" y="58" width="12" height="12" fill="#C9A84C" opacity="0.6"/>
+          </svg>
+          <div class="prod-badge commission">Commission</div>
+          <div class="prod-3d-glow"></div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-category">Architecture</div>
+          <h3 class="prod-name">Harar Arch Door</h3>
+          <p class="prod-desc-text">Custom arched door — Harar-style pointed arch, full-lattice lower panel, mandala tympanum. Fits standard openings or made to measure.</p>
+          <div class="prod-footer">
+            <div class="prod-price">From ETB 110,000</div>
+            <button class="prod-btn">Enquire</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="collections-cta" data-scroll-reveal>
+      <a href="#contact" class="btn-primary large">Enquire About Any Piece</a>
+      <p class="cta-sub">Every piece can be made to your size and specification. Visit us at Century Mall or Bambis.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="divider-strip">
+  <svg width="100%" height="50" viewBox="0 0 1400 50" preserveAspectRatio="xMidYMid meet">
+    <use href="#div-rope-def"/>
+    <defs>
+      <pattern id="div-rope3" x="0" y="0" width="28" height="13" patternUnits="userSpaceOnUse">
+        <path d="M0 3 Q7 0 14 3 Q21 6 28 3" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+        <path d="M0 10 Q7 7 14 10 Q21 13 28 10" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+        <path d="M0 6 Q7 9 14 6 Q21 3 28 6" fill="none" stroke="#7A4E0A" stroke-width="1.2" stroke-linecap="round"/>
+      </pattern>
+      <pattern id="div-diamond3" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+        <rect width="26" height="26" fill="#2C1400"/>
+        <polygon points="13,2 23,13 13,24 3,13" fill="#C9A84C" opacity="0.85"/>
+        <polygon points="13,6 19,13 13,20 7,13" fill="#1A0C02"/>
+        <line x1="13" y1="6" x2="13" y2="20" stroke="#C9A84C" stroke-width="0.9"/>
+        <line x1="7" y1="13" x2="19" y2="13" stroke="#C9A84C" stroke-width="0.9"/>
+      </pattern>
+    </defs>
+    <rect width="1400" height="13" fill="url(#div-rope3)"/>
+    <rect y="37" width="1400" height="13" fill="url(#div-rope3)"/>
+    <rect y="13" width="1400" height="24" fill="url(#div-diamond3)"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     CRAFT PROCESS
+═══════════════════════════════════════════════ -->
+<section id="craft" class="craft-section section-dark">
+  <div class="container">
+    <div class="section-header" data-scroll-reveal>
+      <div class="section-label">✦ The Making ✦</div>
+      <h2 class="section-title light">From Forest<br><em>to Heirloom</em></h2>
+      <p class="section-desc light">A single cabinet takes up to six weeks. This is why.</p>
+    </div>
+
+    <div class="process-timeline">
+      <div class="process-step" data-scroll-reveal data-delay="0">
+        <div class="step-num">፩</div>
+        <div class="step-content">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#C9A84C" stroke-width="1.5">
+              <path d="M24 6 Q36 12 36 24 Q36 38 24 42 Q12 38 12 24 Q12 12 24 6"/>
+              <circle cx="24" cy="24" r="8" stroke-dasharray="5 3"/>
+              <path d="M24 6 L24 16 M24 32 L24 42 M6 24 L16 24 M32 24 L42 24"/>
+            </svg>
+          </div>
+          <h3>Wood Selection</h3>
+          <p>Artisans travel to regional sawmills — Jimma, Gondar, Bale — selecting only first-growth cedar and rosewood. Each plank is checked by hand for grain, density, and freedom from faults.</p>
+        </div>
+      </div>
+
+      <div class="process-step" data-scroll-reveal data-delay="100">
+        <div class="step-num">፪</div>
+        <div class="step-content">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#C9A84C" stroke-width="1.5">
+              <rect x="8" y="20" width="32" height="20" rx="2"/>
+              <path d="M16 20 L16 12 Q24 6 32 12 L32 20"/>
+              <line x1="24" y1="20" x2="24" y2="40"/>
+              <line x1="8" y1="30" x2="40" y2="30"/>
+            </svg>
+          </div>
+          <h3>Seasoning</h3>
+          <p>Timber is stacked and air-dried for a minimum of twelve months in our Addis Ababa workshop. No kiln shortcut — slow seasoning prevents future cracking and gives the wood its characteristic weight.</p>
+        </div>
+      </div>
+
+      <div class="process-step" data-scroll-reveal data-delay="200">
+        <div class="step-num">፫</div>
+        <div class="step-content">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#C9A84C" stroke-width="1.5">
+              <path d="M10 38 L28 10 M28 10 L38 20 M38 20 L20 38 M10 38 L20 38"/>
+              <circle cx="28" cy="10" r="3" fill="#C9A84C"/>
+              <path d="M20 38 Q24 42 28 38"/>
+            </svg>
+          </div>
+          <h3>Pattern Drawing</h3>
+          <p>Master carvers transfer the design onto the prepared surface using charcoal and straight edge — no computers, no projectors. The geometry must be exact; errors in the underdrawing become permanent in the wood.</p>
+        </div>
+      </div>
+
+      <div class="process-step" data-scroll-reveal data-delay="300">
+        <div class="step-num">፬</div>
+        <div class="step-content">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#C9A84C" stroke-width="1.5">
+              <path d="M12 36 Q18 20 28 16 Q36 14 38 8"/>
+              <path d="M38 8 L40 14 L34 12 Z" fill="#C9A84C"/>
+              <path d="M14 38 Q10 30 12 22 Q14 16 8 12"/>
+              <circle cx="22" cy="28" r="4"/>
+            </svg>
+          </div>
+          <h3>Hand Carving</h3>
+          <p>This is the heart of the work. Using V-gouges, chisels, and mallets unchanged in form since the craftsman's grandfather's time, each groove is cut by hand. The rope-twist alone on a standard cabinet takes two full days.</p>
+        </div>
+      </div>
+
+      <div class="process-step" data-scroll-reveal data-delay="400">
+        <div class="step-num">፭</div>
+        <div class="step-content">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#C9A84C" stroke-width="1.5">
+              <path d="M24 8 Q34 16 34 28 Q34 40 24 44 Q14 40 14 28 Q14 16 24 8"/>
+              <path d="M24 16 Q30 22 30 30 Q30 38 24 40 Q18 38 18 30 Q18 22 24 16"/>
+              <line x1="24" y1="8" x2="24" y2="12"/>
+            </svg>
+          </div>
+          <h3>Staining & Finishing</h3>
+          <p>Natural Ethiopian black stain is applied in three coats, each hand-rubbed. The carved grooves catch the stain differently to the raised surfaces — this is what makes the gold-on-ebony contrast so striking. Final coat: beeswax and linseed oil.</p>
+        </div>
+      </div>
+
+      <div class="process-step" data-scroll-reveal data-delay="500">
+        <div class="step-num">፮</div>
+        <div class="step-content">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none" stroke="#C9A84C" stroke-width="1.5">
+              <rect x="10" y="28" width="28" height="14" rx="2"/>
+              <path d="M18 28 L18 20 Q24 12 30 20 L30 28"/>
+              <path d="M24 20 L24 14"/>
+              <circle cx="24" cy="14" r="3" fill="#C9A84C"/>
+              <path d="M16 38 Q24 42 32 38"/>
+            </svg>
+          </div>
+          <h3>Delivery</h3>
+          <p>Each piece leaves our workshop wrapped in hand-woven netela cloth. We deliver within Addis Ababa and ship internationally by specialist art freight. Every piece includes a signed certificate of craftsmanship.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ABOUT / HERITAGE
+═══════════════════════════════════════════════ -->
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text" data-scroll-reveal>
+        <div class="section-label">✦ Our Heritage ✦</div>
+        <h2 class="section-title">Born from the<br><em>Heart of Ethiopia</em></h2>
+        <p class="about-body">For over three decades, Kibran has transformed native Ethiopian timber into heirloom furniture. The workshop was founded in 1987 by master carver Kibran Tesfaye, who learned his craft from his own father in the ancient tradition of the Gondar church carvers.</p>
+        <p class="about-body">No machines — only inherited craft, human hands, and tools passed down through generations. Today, twelve artisans carry the tradition forward, taking on commissions from private homes, embassies, luxury hotels, and museums across Ethiopia and internationally.</p>
+        <div class="about-stats">
+          <div class="a-stat">
+            <span class="a-stat-n" data-count="38">0</span><span class="a-stat-u">+</span>
+            <span class="a-stat-l">Years Active</span>
+          </div>
+          <div class="a-stat">
+            <span class="a-stat-n" data-count="12">0</span>
+            <span class="a-stat-l">Master Artisans</span>
+          </div>
+          <div class="a-stat">
+            <span class="a-stat-n" data-count="850">0</span><span class="a-stat-u">+</span>
+            <span class="a-stat-l">Pieces Crafted</span>
+          </div>
+          <div class="a-stat">
+            <span class="a-stat-n" data-count="18">0</span>
+            <span class="a-stat-l">Countries Shipped</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-visual" data-scroll-reveal data-delay="200">
+        <div class="about-card">
+          <svg viewBox="0 0 380 340" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect width="380" height="340" fill="#2C1400" rx="12"/>
+            <defs>
+              <pattern id="about-rope-svg" x="0" y="0" width="22" height="16" patternUnits="userSpaceOnUse">
+                <path d="M0 3 Q5.5 0 11 3 Q16.5 6 22 3" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M0 12 Q5.5 8 11 12 Q16.5 16 22 12" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M0 7 Q5.5 11 11 7 Q16.5 3 22 7" fill="none" stroke="#7A4E0A" stroke-width="1" stroke-linecap="round"/>
+              </pattern>
+            </defs>
+            <!-- rope border -->
+            <rect x="8" y="8" width="364" height="16" fill="url(#about-rope-svg)"/>
+            <rect x="8" y="316" width="364" height="16" fill="url(#about-rope-svg)"/>
+            <rect x="8" y="8" width="16" height="324" fill="url(#about-rope-svg)"/>
+            <rect x="356" y="8" width="16" height="324" fill="url(#about-rope-svg)"/>
+            <rect x="8" y="8" width="364" height="324" fill="none" stroke="#C9A84C" stroke-width="2" rx="12"/>
+            <!-- large mandala -->
+            <circle cx="190" cy="170" r="118" fill="none" stroke="#C9A84C" stroke-width="4" stroke-dasharray="15 7" class="spin-slow"/>
+            <circle cx="190" cy="170" r="104" fill="#1A0C02" stroke="#C9A84C" stroke-width="2"/>
+            <circle cx="190" cy="170" r="90" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-dasharray="10 5" class="spin-slow-r"/>
+            <circle cx="190" cy="170" r="76" fill="#2C1400" stroke="#8B5E1A" stroke-width="1.5"/>
+            <!-- spokes -->
+            <g fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round">
+              <path d="M190 80 Q212 110 212 140 Q212 170 190 178 Q168 170 168 140 Q168 110 190 80"/>
+              <path d="M190 260 Q212 230 212 200 Q212 170 190 162 Q168 170 168 200 Q168 230 190 260"/>
+              <path d="M100 170 Q130 148 160 148 Q190 148 198 170 Q190 192 160 192 Q130 192 100 170"/>
+              <path d="M280 170 Q250 148 220 148 Q190 148 182 170 Q190 192 220 192 Q250 192 280 170"/>
+            </g>
+            <!-- center -->
+            <rect x="172" y="152" width="36" height="36" fill="#1A0C02" stroke="#C9A84C" stroke-width="1.5"/>
+            <line x1="172" y1="163" x2="208" y2="163" stroke="#C9A84C" stroke-width="0.8"/>
+            <line x1="172" y1="170" x2="208" y2="170" stroke="#C9A84C" stroke-width="0.8"/>
+            <line x1="172" y1="177" x2="208" y2="177" stroke="#C9A84C" stroke-width="0.8"/>
+            <line x1="183" y1="152" x2="183" y2="188" stroke="#C9A84C" stroke-width="0.8"/>
+            <line x1="190" y1="152" x2="190" y2="188" stroke="#C9A84C" stroke-width="0.8"/>
+            <line x1="197" y1="152" x2="197" y2="188" stroke="#C9A84C" stroke-width="0.8"/>
+            <!-- corner Xs -->
+            <rect x="30" y="30" width="22" height="22" fill="#3D1C02" stroke="#C9A84C" stroke-width="1.2"/>
+            <path d="M33 33 L49 49 M49 33 L33 49" stroke="#C9A84C" stroke-width="1"/>
+            <rect x="328" y="30" width="22" height="22" fill="#3D1C02" stroke="#C9A84C" stroke-width="1.2"/>
+            <path d="M331 33 L347 49 M347 33 L331 49" stroke="#C9A84C" stroke-width="1"/>
+            <rect x="30" y="288" width="22" height="22" fill="#3D1C02" stroke="#C9A84C" stroke-width="1.2"/>
+            <path d="M33 291 L49 307 M49 291 L33 307" stroke="#C9A84C" stroke-width="1"/>
+            <rect x="328" y="288" width="22" height="22" fill="#3D1C02" stroke="#C9A84C" stroke-width="1.2"/>
+            <path d="M331 291 L347 307 M347 291 L331 307" stroke="#C9A84C" stroke-width="1"/>
+            <!-- brand text -->
+            <text x="190" y="54" text-anchor="middle" font-family="serif" font-size="13" fill="#C9A84C" letter-spacing="6" opacity="0.7">KIBRAN</text>
+            <text x="190" y="302" text-anchor="middle" font-family="serif" font-size="9" fill="rgba(201,168,76,0.4)" letter-spacing="4">EST. 1987 · ADDIS ABABA</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     ETHIOPIAN HERITAGE
+═══════════════════════════════════════════════ -->
+<section class="heritage-section section-dark">
+  <div class="container">
+    <div class="section-header" data-scroll-reveal>
+      <div class="section-label">✦ ፩ · ፪ — Sacred Inspirations ✦</div>
+      <h2 class="section-title light">Drawn from<br><em>Ancient Ethiopia</em></h2>
+      <p class="section-desc light">The motifs carved into every Kibran piece echo two of Ethiopia's most sacred architectural legacies.</p>
+    </div>
+
+    <div class="heritage-grid">
+
+      <!-- Lalibela -->
+      <div class="heritage-card" data-scroll-reveal data-delay="0">
+        <div class="heritage-icon">
+          <svg viewBox="0 0 160 160" width="160" height="160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Bet Giyorgis cross — three nested crosses, Greek-cross style -->
+            <!-- Outer cross -->
+            <rect x="52" y="8"  width="56" height="56" fill="#2C1400" stroke="#C9A84C" stroke-width="2"/>
+            <rect x="8"  y="52" width="56" height="56" fill="#2C1400" stroke="#C9A84C" stroke-width="2"/>
+            <rect x="52" y="96" width="56" height="56" fill="#2C1400" stroke="#C9A84C" stroke-width="2"/>
+            <rect x="96" y="52" width="56" height="56" fill="#2C1400" stroke="#C9A84C" stroke-width="2"/>
+            <rect x="52" y="52" width="56" height="56" fill="#3D1C02" stroke="#C9A84C" stroke-width="2"/>
+            <!-- Middle cross -->
+            <rect x="60" y="16" width="40" height="40" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+            <rect x="16" y="60" width="40" height="40" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+            <rect x="60" y="104" width="40" height="40" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+            <rect x="104" y="60" width="40" height="40" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+            <rect x="60" y="60" width="40" height="40" fill="none" stroke="#C9A84C" stroke-width="1.2"/>
+            <!-- Inner cross -->
+            <rect x="68" y="24" width="24" height="24" fill="#C9A84C" opacity="0.25"/>
+            <rect x="24" y="68" width="24" height="24" fill="#C9A84C" opacity="0.25"/>
+            <rect x="68" y="112" width="24" height="24" fill="#C9A84C" opacity="0.25"/>
+            <rect x="112" y="68" width="24" height="24" fill="#C9A84C" opacity="0.25"/>
+            <rect x="68" y="68" width="24" height="24" fill="#C9A84C" opacity="0.35"/>
+            <!-- Center diamond -->
+            <polygon points="80,70 90,80 80,90 70,80" fill="#C9A84C"/>
+            <!-- Corner small diamonds -->
+            <polygon points="52,8 60,16 52,24 44,16" fill="#C9A84C" opacity="0.5"/>
+            <polygon points="108,8 116,16 108,24 100,16" fill="#C9A84C" opacity="0.5"/>
+            <polygon points="52,136 60,144 52,152 44,144" fill="#C9A84C" opacity="0.5"/>
+            <polygon points="108,136 116,144 108,152 100,144" fill="#C9A84C" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="heritage-text">
+          <div class="heritage-origin">Lalibela · 12th c.</div>
+          <h3 class="heritage-name">The Bet Giyorgis Cross</h3>
+          <p class="heritage-desc">The tripled Greek cross carved into the roof of Lalibela's rock-hewn Church of St. George. Three nested crosses represent the Trinity — the same geometry appears in Kibran's inlay borders.</p>
+        </div>
+      </div>
+
+      <!-- Axum -->
+      <div class="heritage-card" data-scroll-reveal data-delay="150">
+        <div class="heritage-icon">
+          <svg viewBox="0 0 160 160" width="160" height="160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Axum stele silhouette + Aksumite star -->
+            <!-- Stele body -->
+            <rect x="66" y="40" width="28" height="100" fill="#2C1400" stroke="#C9A84C" stroke-width="1.8" rx="2"/>
+            <!-- Relief bands (horizontal grooves) -->
+            <line x1="66" y1="55"  x2="94" y2="55"  stroke="#C9A84C" stroke-width="1.2" opacity="0.7"/>
+            <line x1="66" y1="68"  x2="94" y2="68"  stroke="#C9A84C" stroke-width="1.2" opacity="0.7"/>
+            <line x1="66" y1="81"  x2="94" y2="81"  stroke="#C9A84C" stroke-width="1.2" opacity="0.7"/>
+            <line x1="66" y1="94"  x2="94" y2="94"  stroke="#C9A84C" stroke-width="1.2" opacity="0.7"/>
+            <line x1="66" y1="107" x2="94" y2="107" stroke="#C9A84C" stroke-width="1.2" opacity="0.7"/>
+            <line x1="66" y1="120" x2="94" y2="120" stroke="#C9A84C" stroke-width="1.2" opacity="0.7"/>
+            <!-- Stele top semicircle -->
+            <path d="M66 40 Q80 22 94 40" fill="#3D1C02" stroke="#C9A84C" stroke-width="1.8"/>
+            <!-- Aksumite 8-pointed star (two overlapping squares, rotated 45°) -->
+            <g transform="translate(80,32)">
+              <rect x="-10" y="-10" width="20" height="20" fill="#C9A84C" opacity="0.9"/>
+              <rect x="-10" y="-10" width="20" height="20" fill="#C9A84C" opacity="0.9" transform="rotate(45)"/>
+              <circle cx="0" cy="0" r="5" fill="#1A0C02"/>
+              <circle cx="0" cy="0" r="2.5" fill="#C9A84C"/>
+            </g>
+            <!-- Base plinth -->
+            <rect x="54" y="138" width="52" height="8" fill="#2C1400" stroke="#C9A84C" stroke-width="1.5" rx="1"/>
+            <rect x="60" y="134" width="40" height="6" fill="#2C1400" stroke="#C9A84C" stroke-width="1" rx="1"/>
+            <!-- Flanking small stars -->
+            <g transform="translate(34,80)">
+              <rect x="-7" y="-7" width="14" height="14" fill="#C9A84C" opacity="0.35"/>
+              <rect x="-7" y="-7" width="14" height="14" fill="#C9A84C" opacity="0.35" transform="rotate(45)"/>
+            </g>
+            <g transform="translate(126,80)">
+              <rect x="-7" y="-7" width="14" height="14" fill="#C9A84C" opacity="0.35"/>
+              <rect x="-7" y="-7" width="14" height="14" fill="#C9A84C" opacity="0.35" transform="rotate(45)"/>
+            </g>
+          </svg>
+        </div>
+        <div class="heritage-text">
+          <div class="heritage-origin">Axum · 3rd–4th c.</div>
+          <h3 class="heritage-name">The Axum Stele & Star</h3>
+          <p class="heritage-desc">The great obelisks of Axum bear window-like relief bands and are crowned with the Aksumite 8-pointed star — two overlapping squares symbolising heaven and earth united. This motif crowns every Kibran cabinet door.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════════ -->
+<section class="testimonials-section section-dark">
+  <div class="container">
+    <div class="section-header" data-scroll-reveal>
+      <div class="section-label">✦ Words of Trust ✦</div>
+      <h2 class="section-title light">What Our Clients<br><em>Say</em></h2>
+    </div>
+
+    <div class="testimonials-track-wrap">
+      <div class="testimonials-track" id="testimonialsTrack">
+
+        <div class="testimonial-card">
+          <div class="tcard-quote">"</div>
+          <p class="tcard-text">The Desta Cabinet we commissioned for our Addis home is extraordinary. Every guest asks about it. Kibran's artisans understand wood the way a musician understands silence — it's what they do with the negative space.</p>
+          <div class="tcard-author">
+            <div class="tcard-avatar">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#2C1400" stroke="#C9A84C" stroke-width="1.5"/><circle cx="24" cy="18" r="8" fill="#C9A84C" opacity="0.5"/><path d="M8 42 Q16 32 24 32 Q32 32 40 42" fill="#C9A84C" opacity="0.4"/></svg>
+            </div>
+            <div>
+              <div class="tcard-name">Alem Haile</div>
+              <div class="tcard-role">Interior Architect · Addis Ababa</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="tcard-quote">"</div>
+          <p class="tcard-text">We furnished our boutique hotel lobby entirely with Kibran pieces. Our guests from Europe and the US consistently say it's unlike anything they've seen — the patterns carry real meaning, not just decoration.</p>
+          <div class="tcard-author">
+            <div class="tcard-avatar">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#2C1400" stroke="#C9A84C" stroke-width="1.5"/><circle cx="24" cy="18" r="8" fill="#C9A84C" opacity="0.5"/><path d="M8 42 Q16 32 24 32 Q32 32 40 42" fill="#C9A84C" opacity="0.4"/></svg>
+            </div>
+            <div>
+              <div class="tcard-name">Daniel Bekele</div>
+              <div class="tcard-role">Hotelier · Lalibela & Gondar</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="tcard-quote">"</div>
+          <p class="tcard-text">The Harar Arch Door took four months to complete and it was worth every day. When light comes through the lattice in the afternoon it makes patterns on the floor. Living with this piece changes how you see the house.</p>
+          <div class="tcard-author">
+            <div class="tcard-avatar">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#2C1400" stroke="#C9A84C" stroke-width="1.5"/><circle cx="24" cy="18" r="8" fill="#C9A84C" opacity="0.5"/><path d="M8 42 Q16 32 24 32 Q32 32 40 42" fill="#C9A84C" opacity="0.4"/></svg>
+            </div>
+            <div>
+              <div class="tcard-name">Sara Mekonnen</div>
+              <div class="tcard-role">Private Collector · London / Addis</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="tcard-quote">"</div>
+          <p class="tcard-text">As an Ethiopian living abroad, having a Kibran dining table in my home is more than furniture — it is identity, history, and welcome. Every meal becomes a ceremony.</p>
+          <div class="tcard-author">
+            <div class="tcard-avatar">
+              <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" fill="#2C1400" stroke="#C9A84C" stroke-width="1.5"/><circle cx="24" cy="18" r="8" fill="#C9A84C" opacity="0.5"/><path d="M8 42 Q16 32 24 32 Q32 32 40 42" fill="#C9A84C" opacity="0.4"/></svg>
+            </div>
+            <div>
+              <div class="tcard-name">Yonas Tadesse</div>
+              <div class="tcard-role">Diaspora Client · Washington D.C.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="testimonials-nav">
+        <button class="tnav-btn" id="tnavPrev" aria-label="Previous">←</button>
+        <div class="tnav-dots" id="tnavDots"></div>
+        <button class="tnav-btn" id="tnavNext" aria-label="Next">→</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="divider-strip divider-light">
+  <svg width="100%" height="50" viewBox="0 0 1400 50" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <pattern id="div-rope4" x="0" y="0" width="28" height="13" patternUnits="userSpaceOnUse">
+        <path d="M0 3 Q7 0 14 3 Q21 6 28 3" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+        <path d="M0 10 Q7 7 14 10 Q21 13 28 10" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+        <path d="M0 6 Q7 9 14 6 Q21 3 28 6" fill="none" stroke="#8B5E1A" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+      </pattern>
+      <pattern id="div-diamond4" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+        <rect width="26" height="26" fill="#F0E5CC"/>
+        <polygon points="13,2 23,13 13,24 3,13" fill="#C9A84C" opacity="0.3"/>
+        <polygon points="13,6 19,13 13,20 7,13" fill="#F0E5CC"/>
+        <line x1="13" y1="6" x2="13" y2="20" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+        <line x1="7" y1="13" x2="19" y2="13" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+      </pattern>
+    </defs>
+    <rect width="1400" height="13" fill="url(#div-rope4)"/>
+    <rect y="37" width="1400" height="13" fill="url(#div-rope4)"/>
+    <rect y="13" width="1400" height="24" fill="url(#div-diamond4)"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     BRANCHES
+═══════════════════════════════════════════════ -->
+<section id="branches" class="branches-section section-dark">
+  <div class="container">
+    <div class="section-header" data-scroll-reveal>
+      <div class="section-label">✦ Find Us ✦</div>
+      <h2 class="section-title light">Two Locations<br><em>in Addis Ababa</em></h2>
+      <p class="section-desc light">Visit us in person — touch the wood, feel the carving, speak with an artisan.</p>
+    </div>
+
+    <div class="branches-grid">
+
+      <!-- Branch 1: Century Mall -->
+      <div class="branch-card branch-card-mini" data-scroll-reveal data-delay="0">
+        <div class="branch-card-inner">
+          <div class="branch-mini-accent">
+            <svg viewBox="0 0 240 8" width="100%"><rect width="240" height="8" fill="url(#br-rope1-mini)"/><defs><pattern id="br-rope1-mini" x="0" y="0" width="22" height="8" patternUnits="userSpaceOnUse"><path d="M0 2 Q5.5 0 11 2 Q16.5 4 22 2" fill="none" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/><path d="M0 6 Q5.5 4 11 6 Q16.5 8 22 6" fill="none" stroke="#8B5E1A" stroke-width="0.8" stroke-linecap="round"/></pattern></defs></svg>
+          </div>
+          <div class="branch-mini-num">፩</div>
+          <h3 class="branch-mini-name">KIBRAN</h3>
+          <div class="branch-mini-building">Century Mall</div>
+          <div class="branch-mini-contacts">
+            <div class="bmc-row">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 .96h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+251 911 000 001</span>
+            </div>
+            <div class="bmc-row">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>centurymall@kibran.et</span>
+            </div>
+          </div>
+          <div class="branch-mini-accent">
+            <svg viewBox="0 0 240 8" width="100%"><rect width="240" height="8" fill="url(#br-rope1-mini)"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Branch 2: Bambis -->
+      <div class="branch-card branch-card-mini" data-scroll-reveal data-delay="200">
+        <div class="branch-card-inner">
+          <div class="branch-mini-accent">
+            <svg viewBox="0 0 240 8" width="100%"><rect width="240" height="8" fill="url(#br-rope2-mini)"/><defs><pattern id="br-rope2-mini" x="0" y="0" width="22" height="8" patternUnits="userSpaceOnUse"><path d="M0 2 Q5.5 0 11 2 Q16.5 4 22 2" fill="none" stroke="#C9A84C" stroke-width="1.4" stroke-linecap="round"/><path d="M0 6 Q5.5 4 11 6 Q16.5 8 22 6" fill="none" stroke="#8B5E1A" stroke-width="0.8" stroke-linecap="round"/></pattern></defs></svg>
+          </div>
+          <div class="branch-mini-num">፪</div>
+          <h3 class="branch-mini-name">KIBRAN</h3>
+          <div class="branch-mini-building">Bambis — beside Fresh Corner</div>
+          <div class="branch-mini-contacts">
+            <div class="bmc-row">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 .96h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <span>+251 911 000 002</span>
+            </div>
+            <div class="bmc-row">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>bambis@kibran.et</span>
+            </div>
+          </div>
+          <div class="branch-mini-accent">
+            <svg viewBox="0 0 240 8" width="100%"><rect width="240" height="8" fill="url(#br-rope2-mini)"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Divider -->
+<div class="divider-strip">
+  <svg width="100%" height="50" viewBox="0 0 1400 50" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <pattern id="div-contact-rope" x="0" y="0" width="28" height="13" patternUnits="userSpaceOnUse">
+        <path d="M0 3 Q7 0 14 3 Q21 6 28 3" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+        <path d="M0 10 Q7 7 14 10 Q21 13 28 10" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+        <path d="M0 6 Q7 9 14 6 Q21 3 28 6" fill="none" stroke="#7A4E0A" stroke-width="1.2" stroke-linecap="round"/>
+      </pattern>
+      <pattern id="div-contact-dmd" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+        <rect width="26" height="26" fill="#F0E5CC"/>
+        <polygon points="13,2 23,13 13,24 3,13" fill="#C9A84C" opacity="0.3"/>
+        <polygon points="13,6 19,13 13,20 7,13" fill="#F0E5CC"/>
+        <line x1="13" y1="6" x2="13" y2="20" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+        <line x1="7" y1="13" x2="19" y2="13" stroke="#C9A84C" stroke-width="0.7" opacity="0.4"/>
+      </pattern>
+    </defs>
+    <rect width="1400" height="13" fill="url(#div-contact-rope)"/>
+    <rect y="37" width="1400" height="13" fill="url(#div-contact-rope)"/>
+    <rect y="13" width="1400" height="24" fill="url(#div-contact-dmd)"/>
+  </svg>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════════ -->
+<section id="contact" class="commission-section">
+  <div class="container">
+    <div class="commission-grid">
+      <div class="commission-text" data-scroll-reveal>
+        <div class="section-label">✦ Get in Touch ✦</div>
+        <h2 class="section-title">Talk to<br><em>Our Workshop</em></h2>
+        <p class="commission-body">Whether you have a question about a piece in our gallery, want to discuss a custom order, or simply want to know more — we'd love to hear from you.</p>
+
+        <div class="commission-features">
+          <div class="cf-item">
+            <div class="cf-icon">◈</div>
+            <div>
+              <div class="cf-title">Visit in Person</div>
+              <div class="cf-text">Both our Century Mall and Bambis showrooms have pieces on display. Bring your dimensions — our team will guide you through options.</div>
+            </div>
+          </div>
+          <div class="cf-item">
+            <div class="cf-icon">◈</div>
+            <div>
+              <div class="cf-title">Custom Orders Welcome</div>
+              <div class="cf-text">Any piece in our gallery can be made to your size, wood choice, and pattern combination. Every order begins with a conversation.</div>
+            </div>
+          </div>
+          <div class="cf-item">
+            <div class="cf-icon">◈</div>
+            <div>
+              <div class="cf-title">International Shipping</div>
+              <div class="cf-text">We ship worldwide via specialist art freight. Diaspora orders are welcome — your heritage belongs wherever you are.</div>
+            </div>
+          </div>
+          <div class="cf-item">
+            <div class="cf-icon">◈</div>
+            <div>
+              <div class="cf-title">Response Time</div>
+              <div class="cf-text">We reply to all messages within 24–48 hours. For urgent enquiries, call either branch directly.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="commission-form-wrap" data-scroll-reveal data-delay="200">
+        <form class="commission-form" id="commissionForm" onsubmit="handleFormSubmit(event)">
+          <div class="form-header">
+            <svg class="form-header-pattern" viewBox="0 0 400 30" width="100%">
+              <defs>
+                <pattern id="form-rope" x="0" y="0" width="20" height="14" patternUnits="userSpaceOnUse">
+                  <path d="M0 3 Q5 0 10 3 Q15 6 20 3" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M0 10 Q5 7 10 10 Q15 13 20 10" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M0 6 Q5 9 10 6 Q15 3 20 6" fill="none" stroke="#7A4E0A" stroke-width="1" stroke-linecap="round"/>
+                </pattern>
+              </defs>
+              <rect width="400" height="30" fill="url(#form-rope)"/>
+            </svg>
+          </div>
+          <div class="form-body">
+            <h3 class="form-title">Send Us a Message</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="name" placeholder="Your name" required/>
+              </div>
+              <div class="form-group">
+                <label>Email or Phone</label>
+                <input type="text" name="contact" placeholder="email or +251…" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Which Branch?</label>
+              <select name="branch">
+                <option value="">Any branch / online</option>
+                <option>Century Mall</option>
+                <option>Bambis — beside Fresh Corner</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>I'm interested in…</label>
+              <select name="interest">
+                <option value="">Select…</option>
+                <option>A piece in the gallery</option>
+                <option>Custom / bespoke order</option>
+                <option>Pricing & availability</option>
+                <option>International shipping</option>
+                <option>General enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="message" rows="4" placeholder="Tell us what you're looking for…"></textarea>
+            </div>
+            <button type="submit" class="form-submit">
+              <span>Send Message</span>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9h12M11 5l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+          <div class="form-footer-pattern">
+            <svg viewBox="0 0 400 30" width="100%">
+              <rect width="400" height="30" fill="url(#form-rope)"/>
+            </svg>
+          </div>
+        </form>
+        <div class="form-success" id="formSuccess" style="display:none">
+          <svg viewBox="0 0 80 80" width="64" height="64" fill="none">
+            <circle cx="40" cy="40" r="36" stroke="#C9A84C" stroke-width="2" stroke-dasharray="226" stroke-dashoffset="226" class="success-circle"/>
+            <path d="M24 40 L34 52 L56 28" stroke="#C9A84C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="50" stroke-dashoffset="50" class="success-check"/>
+          </svg>
+          <h3>Message Sent</h3>
+          <p>Thank you. We will be in touch within 24–48 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     CONTACT / FOOTER
+═══════════════════════════════════════════════ -->
+<footer id="footer" class="footer">
+  <div class="footer-top">
+    <svg width="100%" height="50" viewBox="0 0 1400 50" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <pattern id="footer-rope" x="0" y="0" width="28" height="13" patternUnits="userSpaceOnUse">
+          <path d="M0 3 Q7 0 14 3 Q21 6 28 3" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+          <path d="M0 10 Q7 7 14 10 Q21 13 28 10" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+          <path d="M0 6 Q7 9 14 6 Q21 3 28 6" fill="none" stroke="#7A4E0A" stroke-width="1.2" stroke-linecap="round"/>
+        </pattern>
+        <pattern id="footer-diamond" x="0" y="0" width="26" height="26" patternUnits="userSpaceOnUse">
+          <rect width="26" height="26" fill="#2C1400"/>
+          <polygon points="13,2 23,13 13,24 3,13" fill="#C9A84C" opacity="0.85"/>
+          <polygon points="13,6 19,13 13,20 7,13" fill="#1A0C02"/>
+          <line x1="13" y1="6" x2="13" y2="20" stroke="#C9A84C" stroke-width="0.9"/>
+          <line x1="7" y1="13" x2="19" y2="13" stroke="#C9A84C" stroke-width="0.9"/>
+        </pattern>
+      </defs>
+      <rect width="1400" height="13" fill="url(#footer-rope)"/>
+      <rect y="37" width="1400" height="13" fill="url(#footer-rope)"/>
+      <rect y="13" width="1400" height="24" fill="url(#footer-diamond)"/>
+    </svg>
+  </div>
+
+  <div class="footer-body">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">KIBRAN</div>
+        <div class="footer-logo-sub">Ethiopian Handcrafted Furniture</div>
+        <p class="footer-tagline">Where Ancient Wood Tells New Stories.<br>Every groove a generation.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Pinterest">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.5 2 2 6.5 2 12c0 4.2 2.7 7.8 6.5 9.3-.1-.8-.2-2.2 0-3.1l1.3-5.5s-.3-.7-.3-1.7c0-1.6.9-2.8 2.3-2.8 1.1 0 1.6.8 1.6 1.8 0 1.1-.7 2.7-1 4.2-.3 1.3.6 2.3 1.8 2.3 2.1 0 3.7-2.2 3.7-5.4 0-2.8-2-4.8-4.9-4.8-3.3 0-5.2 2.5-5.2 5 0 1 .4 2 .9 2.6.1.1.1.2 0 .4l-.3 1.3c-.1.2-.3.3-.5.2C5.8 15.2 5 13.2 5 11.6 5 7.9 7.8 4.5 12.4 4.5c3.7 0 6.6 2.6 6.6 6.2 0 3.7-2.3 6.6-5.6 6.6-1.1 0-2.1-.6-2.4-1.2l-.7 2.5c-.2.9-.8 2-1.2 2.7.9.3 1.9.4 2.9.4 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Collections</h4>
+        <ul class="footer-links">
+          <li><a href="#collections">Cabinets & Storage</a></li>
+          <li><a href="#collections">Dining Furniture</a></li>
+          <li><a href="#collections">Bedroom Pieces</a></li>
+          <li><a href="#collections">Wall Art Panels</a></li>
+          <li><a href="#collections">Architectural Doors</a></li>
+          <li><a href="#collections">Screens & Dividers</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-col-title">Workshop</h4>
+        <ul class="footer-links">
+          <li><a href="#craft">Our Process</a></li>
+          <li><a href="#about">Our Heritage</a></li>
+          <li><a href="#contact">Commission a Piece</a></li>
+          <li><a href="#contact">Pattern Archive</a></li>
+          <li><a href="#contact">Shipping & Export</a></li>
+          <li><a href="#contact">Care Guide</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact-col">
+        <h4 class="footer-col-title">Visit the Workshop</h4>
+        <div class="footer-address">
+          <p>Kibran Workshop</p>
+          <p>Bole Sub-City, Woreda 03</p>
+          <p>Addis Ababa, Ethiopia</p>
+        </div>
+        <div class="footer-contact-items">
+          <div class="fci">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 .96h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>+251 911 000 000</span>
+          </div>
+          <div class="fci">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>commission@kibran.et</span>
+          </div>
+          <div class="fci">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+            <span>Mon–Sat: 8am – 6pm EAT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <svg width="100%" height="30" viewBox="0 0 1400 30" preserveAspectRatio="xMidYMid meet" style="display:block;margin-bottom:-1px">
+      <defs>
+        <pattern id="fb-rope" x="0" y="0" width="20" height="12" patternUnits="userSpaceOnUse">
+          <path d="M0 2.5 Q5 0 10 2.5 Q15 5 20 2.5" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <path d="M0 9 Q5 6.5 10 9 Q15 11.5 20 9" fill="none" stroke="#C9A84C" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+        </pattern>
+      </defs>
+      <rect width="1400" height="30" fill="url(#fb-rope)"/>
+    </svg>
+    <div class="footer-bottom-inner">
+      <span>© 2024 Kibran Workshop. All pieces unique.</span>
+      <span class="footer-sep">✦</span>
+      <span>Addis Ababa, Ethiopia</span>
+      <span class="footer-sep">✦</span>
+      <span>Made by hand, never by machine</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Enquiry Modal -->
+<div class="modal-overlay" id="enquiryModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">×</button>
+    <div class="modal-header">
+      <svg viewBox="0 0 200 20" width="200">
+        <rect width="200" height="20" fill="url(#form-rope)"/>
+      </svg>
+    </div>
+    <div class="modal-body">
+      <h3 class="modal-title">Enquire About This Piece</h3>
+      <p class="modal-piece-name" id="modalPieceName"></p>
+      <form onsubmit="handleEnquirySubmit(event)">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="Name" required/>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="email@example.com" required/>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="3" placeholder="Any specific requirements…"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

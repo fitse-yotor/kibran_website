@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la Downloads/ && ls -la \"C:/Users/muluh/Downloads/project x/kibran/\" 2>/dev/null || true)",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(ls \"C:/Users/muluh/Downloads/\" | head -20)",
+      "Bash(ls \"C:/Users/muluh/Downloads/\" | grep -i \"kibran\\\\|furniture\\\\|wood\\\\|ethiopian\\\\|piece\\\\|vanity\\\\|bed\" 2>/dev/null; ls \"C:/Users/muluh/AppData/Local/Temp/\" 2>/dev/null | grep -i \"jpg\\\\|png\\\\|jpeg\" | head -10)"
+    ]
+  }
+}
